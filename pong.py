@@ -13,3 +13,11 @@ def addscore():
 
 def seescore():
     global users_table, db, scores
+def adduser():
+    global users_table, db
+def users():
+    global users_table, db
+    user_count = len(users_table)
+    userlist = users_table.all();
+    for i in range(0, user_count):
+        userlist[i]['id']
