@@ -18,7 +18,7 @@ def keydown(event):
     if event.key == K_UP:
         paddle2_vel = -8
     elif event.key == K_DOWN:
-        paddle2_vel = 8
+        paddle2_vel = 80
     elif event.key == K_w:
         paddle1_vel = 8
     elif event.key == K_s:
