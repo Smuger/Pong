@@ -15,6 +15,10 @@ score2 = 0
 pygame.init()
 pygame.font.init()
 
+def init():
+    global paddle1_pos, paddle2_pos, paddle1_vel, paddle2_vel
+    global score1, score2
+
 window = pygame.display.set_mode((WIDTH, HEIGHT), 0, 32)
 pygame.display.set_caption("siusiak")
 window.fill(WHITE)
@@ -29,6 +33,24 @@ score = text.render( (str(score1) + " : " + str(score2)), 1, WHITE)
 
 score_width, score_height = text.size((str(score1) + " : " + str(score2)))
 window.blit(score, (H_WIDTH - score_width/2, 32))
+
+def keydown(event):
+    global paddle1_vel, paddle2_vel
+    if event.key == K_w:
+        paddle1_vel = -10
+    elif event.key == K_s:
+        paddle1_vel = 10
+    elif event.key == K_UP:
+        paddle2_vel = -10
+    elif event.key == K_DOWN:
+        paddle2_vel = 10
+
+def keyup(event):
+    global paddle1_vel, paddle2_vel
+    if event.key in (K_w, K_s):
+        paddle1_vel = 0
+    elif event.key in (K_UP, K_DOWN):
+        paddle2_vel = 0
 
 pygame.display.update()
 running = True
