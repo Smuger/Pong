@@ -44,14 +44,22 @@ def draw(window):
     pygame.draw.rect(window, WHITE, (WIDTH - 48, paddle2_pos, 16, 64))
     pygame.draw.circle(window, WHITE, (int(ball_pos[0]), int(ball_pos[1])), 10, 0)
 
-    if paddle1_pos[1] >= 8 and paddle1_pos
+    if paddle1_pos > 8 and paddle1_pos < (HEIGHT - 72):
         paddle1_pos += paddle1_vel
-    paddle2_pos += paddle2_vel
+    elif paddle1_pos == 8 and paddle1_vel > 0:
+        paddle1_pos += paddle1_vel
+    elif paddle1_pos == (HEIGHT - 72) and paddle1_vel < 0:
+        paddle1_pos += paddle1_vel
+    if paddle2_pos > 8 and paddle2_pos < (HEIGHT - 72):
+        paddle2_pos += paddle2_vel
+    elif paddle2_pos == 8 and paddle2_vel > 0:
+        paddle2_pos += paddle2_vel
+    elif paddle2_pos == (HEIGHT - 72) and paddle2_vel < 0:
+        paddle2_pos += paddle2_vel
+
 
     ball_pos[0] += ball_vel[0]
     ball_pos[1] += ball_vel[1]
-    print(str(ball_vel))
-    print(str(ball_pos))
 
     text = pygame.font.SysFont("", 64)
     score = text.render( (str(score1) + " : " + str(score2)), 1, WHITE)
