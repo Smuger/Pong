@@ -15,6 +15,7 @@ def seescore():
     global users_table, db, scores
 def adduser():
     global users_table, db
+
 def users():
     global users_table, db
     user_count = len(users_table)
