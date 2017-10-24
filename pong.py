@@ -14,7 +14,12 @@ score1 = 0
 score2 = 0
 paddle1_vel = 0
 paddle2_vel = 0
-ball_vel = [random.randrange(-2, 2), random.randrange(-2, 2)]
+L_or_R = random.randint(0, 1)
+if L_or_R == 0:
+    ball_vel = [random.uniform(-1, -0.5), random.uniform(-1, 1)]
+else:
+    ball_vel = [random.uniform(0.5, 1), random.uniform(-1, 1)]
+
 
 pygame.init()
 pygame.font.init()
@@ -37,9 +42,10 @@ def draw(window):
     pygame.draw.line(window, WHITE, (H_WIDTH, 0), (H_WIDTH, HEIGHT))
     pygame.draw.rect(window, WHITE, (32, paddle1_pos, 16, 64))
     pygame.draw.rect(window, WHITE, (WIDTH - 48, paddle2_pos, 16, 64))
-    pygame.draw.circle(window, WHITE, (ball_pos[0], ball_pos[1]), 10, 0)
+    pygame.draw.circle(window, WHITE, (int(ball_pos[0]), int(ball_pos[1])), 10, 0)
 
-    paddle1_pos += paddle1_vel
+    if paddle1_pos[1] >= 8 and paddle1_pos
+        paddle1_pos += paddle1_vel
     paddle2_pos += paddle2_vel
 
     ball_pos[0] += ball_vel[0]
