@@ -15,12 +15,11 @@ score2 = 0
 paddle1_vel = 0
 paddle2_vel = 0
 L_or_R = random.randint(0, 1)
-# PLASKA PARABOLA
-ball_vel = [1, 0]
-#if L_or_R == 0:
-#    ball_vel = [random.uniform(-1, -0.5), random.uniform(-1, 1)]
-#else:
-#   ball_vel = [random.uniform(0.5, 1), random.uniform(-1, 1)]
+
+if L_or_R == 0:
+    ball_vel = [random.uniform(-1, -0.5), random.uniform(-1, 1)]
+else:
+   ball_vel = [random.uniform(0.5, 1), random.uniform(-1, 1)]
 
 
 pygame.init()
