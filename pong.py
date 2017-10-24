@@ -53,7 +53,6 @@ def draw(window):
     print(str(ball_vel))
     print(str(ball_pos))
 
-
     text = pygame.font.SysFont("", 64)
     score = text.render( (str(score1) + " : " + str(score2)), 1, WHITE)
 
