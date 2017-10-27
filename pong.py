@@ -33,13 +33,13 @@ pygame.font.init()
 #Losowanie kierunku rzutu pilki
 L_or_R = random.randint(0, 3)
 if L_or_R == 0:
-    ball_vel = [-random.uniform(0, 1), -random.randint(0, 1)]
+    ball_vel = [-random.uniform(0, 1), -1]
 elif L_or_R == 1:
-    ball_vel = [-random.uniform(0, 1), random.randint(0, 1)]
+    ball_vel = [-random.uniform(0, 1), 1]
 elif L_or_R == 2:
-    ball_vel = [random.uniform(0, 1), -random.randint(0, 1)]
+    ball_vel = [random.uniform(0, 1), -1]
 elif L_or_R == 3:
-    ball_vel = [random.uniform(0, 1), random.randint(0, 1)]
+    ball_vel = [random.uniform(0, 1), 1]
 
 def init():
     global paddle1_pos, paddle2_pos, ball_pos, paddle1_vel, paddle2_vel
