@@ -3,7 +3,6 @@
 import random, pygame, sys
 from pygame.locals import *
 
-
 WIDTH = 800
 H_WIDTH = int(WIDTH/2)
 HEIGHT = 600
