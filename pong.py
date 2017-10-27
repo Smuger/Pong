@@ -3,6 +3,7 @@
 import random, pygame, sys
 from pygame.locals import *
 
+
 WIDTH = 800
 H_WIDTH = int(WIDTH/2)
 HEIGHT = 600
@@ -41,7 +42,6 @@ elif L_or_R == 3:
     ball_vel = [random.uniform(0, 1), random.randint(0, 1)]
 
 def init():
-
     global paddle1_pos, paddle2_pos, ball_pos, paddle1_vel, paddle2_vel
     paddle1_pos = [32, H_HEIGHT - 32]
     paddle2_pos = [WIDTH - 32, H_HEIGHT - 32]
@@ -90,7 +90,7 @@ def draw(window):
 
         elif int(ball_pos[0]) == WIDTH - 40:
             if ball_pos[1] in range(paddle2_pos[1], paddle2_pos[1] + 64):
-                ball_vel[0] = -ball_vel[0]
+               ball_vel[0] = -ball_vel[0]
         elif int(ball_pos[0]) == 47:
             score2 += 1
             init()
@@ -125,9 +125,6 @@ def keyup(event):
         paddle1_vel = 0
     elif event.key in (K_UP, K_DOWN):
         paddle2_vel = 0
-
-
-
 
 init()
 running = True
